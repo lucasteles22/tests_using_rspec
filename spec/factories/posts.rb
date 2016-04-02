@@ -1,4 +1,4 @@
-FactoryGirl.define do
+  FactoryGirl.define do
   factory :post do
     title 'My custom post'
     body 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor'
