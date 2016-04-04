@@ -4,12 +4,15 @@
     body 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor'
     association :author, factory: :user
 
-    factory :post_repproved do
+    trait :repproved do
       approved false
     end
 
-    factory :post_approved do
+    trait :approved do
       approved true
     end
+
+    factory :post_approved, traits: [:approved]
+    factory :post_repproved, traits: [:repproved]
   end
 end
