@@ -3,18 +3,14 @@ require 'rails_helper'
 RSpec.describe User, type: :model do
   context "validations" do
     let(:user) { create(:user, :with_post) }
-    
+
     it 'is an instance of User' do
       expect(subject).to be_an User
     end
 
-    describe "#first_name" do
-      it "is required" do
-        user.first_name = nil
-        user.valid?
-        expect(user.errors).to have_key(:first_name)
-      end
-    end
+    include_examples 'field is required', User, :first_name
+    include_examples 'field is required', User, :last_name
+    include_examples 'email is required', User, :email
 
     it 'has posts' do
       expect(user.posts.count).to eql 3
