@@ -6,5 +6,8 @@ RSpec.describe Post, type: :model do
     it 'is an instance of Post' do
       expect(subject).to be_an Post
     end
+
+    include_examples 'field is required', Post, :title
+    include_examples 'field is required', Post, :body
   end
 end
