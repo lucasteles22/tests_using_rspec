@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  has_many :posts, foreign_key: 'author_id'
+  has_many :posts, foreign_key: 'author_id', dependent: :destroy
 
   validates :first_name, :last_name, :email, presence: true
   validates_uniqueness_of :email, case_sensitive: false

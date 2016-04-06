@@ -1,4 +1,4 @@
-<%= form_for(@post) do |f| %>
+<%= form_for(@post, :html => {:id => 'post_form'}) do |f| %>
   <% if @post.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
@@ -10,6 +10,27 @@
       </ul>
     </div>
   <% end %>
+
+  <p>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </p>
+
+  <p>
+    <%= f.label :body %>
+    <%= f.text_area :body %>
+  </p>
+
+  <p>
+    <%= f.label :approved %>
+    <%= f.check_box :approved %>
+  </p>
+
+  <p>
+    <%= f.label :author %>
+    <%= f.collection_select(:author_id, User.all.order(:first_name), :id, :full_name, :prompt => 'Choose a user') %>
+  </p>
+
 
   <div class="actions">
     <%= f.submit %>

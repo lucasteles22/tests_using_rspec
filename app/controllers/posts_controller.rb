@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all
+    @posts = Post.all.includes(:author)
   end
 
   # GET /posts/1
@@ -69,6 +69,6 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.fetch(:post, {})
+      params.require(:post).permit(:title, :body, :approved, :author_id)
     end
 end

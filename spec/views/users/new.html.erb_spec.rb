@@ -4,7 +4,7 @@ RSpec.describe "users/new", type: :view do
   context "Create a new user" do
     scenario "has not alread been registered" do
       visit '/users/new'
-      within("#new_user_form") do
+      within("#user_form") do
         fill_in 'user_email', :with => 'my_email_test@test.com'
         fill_in 'user_first_name', :with => 'My custom'
         fill_in 'user_last_name', :with => 'New user'
@@ -16,7 +16,7 @@ RSpec.describe "users/new", type: :view do
     scenario "has alread been registered" do
       user = create(:user)
       visit '/users/new'
-      within("#new_user_form") do
+      within("#user_form") do
         fill_in 'user_email', :with => user.email
         fill_in 'user_first_name', :with => user.first_name
         fill_in 'user_last_name', :with => user.last_name
@@ -27,7 +27,7 @@ RSpec.describe "users/new", type: :view do
 
     scenario "has not first_name" do
       visit '/users/new'
-      within("#new_user_form") do
+      within("#user_form") do
         fill_in 'user_email', :with => 'my_email_test@test.com'
         fill_in 'user_last_name', :with => 'New user'
       end
@@ -37,7 +37,7 @@ RSpec.describe "users/new", type: :view do
 
     scenario "has not last_name" do
       visit '/users/new'
-      within("#new_user_form") do
+      within("#user_form") do
         fill_in 'user_email', :with => 'my_email_test@test.com'
         fill_in 'user_first_name', :with => 'My custom'
       end
@@ -47,7 +47,7 @@ RSpec.describe "users/new", type: :view do
 
     scenario "has not email" do
       visit '/users/new'
-      within("#new_user_form") do
+      within("#user_form") do
         fill_in 'user_first_name', :with => 'My custom'
         fill_in 'user_last_name', :with => 'New user'
       end
@@ -57,7 +57,7 @@ RSpec.describe "users/new", type: :view do
 
     scenario "has blank first_name" do
       visit '/users/new'
-      within("#new_user_form") do
+      within("#user_form") do
         fill_in 'user_email', :with => 'my_email_test@test.com'
         fill_in 'user_first_name', :with => ''
         fill_in 'user_last_name', :with => 'New user'
@@ -68,7 +68,7 @@ RSpec.describe "users/new", type: :view do
 
     scenario "has blank last_name" do
       visit '/users/new'
-      within("#new_user_form") do
+      within("#user_form") do
         fill_in 'user_email', :with => 'my_email_test@test.com'
         fill_in 'user_first_name', :with => 'My custom'
         fill_in 'user_last_name', :with => ''
@@ -79,7 +79,7 @@ RSpec.describe "users/new", type: :view do
 
     scenario "has blank email" do
       visit '/users/new'
-      within("#new_user_form") do
+      within("#user_form") do
         fill_in 'user_email', :with => ''
         fill_in 'user_first_name', :with => 'My custom'
         fill_in 'user_last_name', :with => 'New user'
