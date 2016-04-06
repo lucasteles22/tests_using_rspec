@@ -1,4 +1,15 @@
 <p id="notice"><%= notice %></p>
 
+<h1><%= @post.title %></h1>
+
+<dl>
+  <dt>Body</dt>
+  <dd><%= @post.body %></dd>
+  <dt>Approved</dt>
+  <dd><%= @post.approved %></dd>
+  <dt>Author</dt>
+  <dd><%= @post.author.full_name %></dd>
+</dl>
+
 <%= link_to 'Edit', edit_post_path(@post) %> |
 <%= link_to 'Back', posts_path %>

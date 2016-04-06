@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "users/new", type: :view do
   context "Create a new user" do
-    scenario "has not alread been registered" do
+    scenario "successfully created" do
       visit '/users/new'
       within("#user_form") do
         fill_in 'user_email', :with => 'my_email_test@test.com'
