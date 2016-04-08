@@ -1,4 +1,7 @@
 [![Codacy Badge](https://api.codacy.com/project/badge/grade/c631086d14af49bea65ab5af78fa29fb)](https://www.codacy.com/app/lucasteles22/tests_using_rspec)
+[![Code Climate](https://codeclimate.com/github/lucasteles22/tests_using_rspec/badges/gpa.svg)](https://codeclimate.com/github/lucasteles22/tests_using_rspec)
+[![Test Coverage](https://codeclimate.com/github/lucasteles22/tests_using_rspec/badges/coverage.svg)](https://codeclimate.com/github/lucasteles22/tests_using_rspec/coverage)
+[![Issue Count](https://codeclimate.com/github/lucasteles22/tests_using_rspec/badges/issue_count.svg)](https://codeclimate.com/github/lucasteles22/tests_using_rspec)
 
 # tests_using_rspec
 Tests using the rspec framework for rails.
